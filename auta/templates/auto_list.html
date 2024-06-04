@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seznam Aut</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="bg">
+<header>
+    <div class="topnav">
+        <a href="{% url 'auto_list' %}">Auta</a>
+        <a href="{% url 'vyrobce_list' %}">Seznam výrobců</a>
+        <a href="{% url 'zavod_list' %}">Seznam továren</a>
+        <a class="active" href="{% url 'auto_list' %}">Seznam aut</a>
+    </div>
+</header>
+<main>
+    <h1 class="centricek">Seznam Aut</h1>
+    <div class="container">
+        <div class="row">
+            {% for auto in auta %}
+            <div class="col-md-4">
+                <div class="card mb-4 bgs">
+                    <div class="card-body bgs">
+                        <h5 class="card-title">
+                            <a href="{% url 'auto_detail' auto.id %}" class="custom-link">{{ auto.model }}</a>
+                        </h5>
+                        <p class="card-text"><strong>SPZ:</strong> {{ auto.spz }}</p>
+                        <p class="card-text"><strong>Výrobní závod:</strong> {{ auto.zavod.nazev }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+<footer>
+    &copy; IT 2131 2024 Car manufacturing
+</footer>
+<script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

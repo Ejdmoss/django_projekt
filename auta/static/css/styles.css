@@ -1,0 +1,91 @@
+.topnav {
+  overflow: hidden !important;
+  background-color: #333 !important;
+}
+
+.topnav a {
+  float: left !important;
+  color: #f2f2f2 !important;
+  text-align: center !important;
+  padding: 14px 16px !important;
+  text-decoration: none !important;
+  font-size: 17px !important;
+}
+
+.topnav a:hover {
+  background-color: #ddd !important;
+  color: black !important;
+}
+
+.topnav a.active {
+  background-color: #302626 !important;
+  color: white !important;
+}
+
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #333;
+   color: white;
+   text-align: center;
+}
+
+.centered {
+  position: absolute;
+    color: white;
+    font-weight: bolder;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pozadko {
+    background-color: #333;
+    padding: 5px 25px 10px 25px;
+    border-radius: 30px;
+}
+
+.centricek {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
+}
+
+.bg {
+    background-image: url('../img/ok.jpeg');
+}
+
+.fotka {
+    height: 50px;
+    width: 100px;
+}
+
+.fotkos {
+    height: 150px;
+    width: 350px;
+}
+
+.bgs {
+    background-color: #333;
+    color: white;
+    border-radius: 30px;
+}
+
+/* styles.css */
+.custom-link {
+    color: orange;
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: darkorange;
+    text-decoration: underline;
+}
+
+.kok {
+    color: orange; /* Nastavte barvu odkazu na oranžovou */
+    text-decoration: none; /* Odstraní podtržení odkazu */
+}

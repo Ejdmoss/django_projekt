@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Auta</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <div class="topnav">
+        <a class="active" href="">Auta</a>
+        <a href="{% url 'vyrobce_list' %}">Seznam výrobců</a>
+        <a href="{% url 'zavod_list' %}">Seznam továren</a>
+        <a href="{% url 'auto_list' %}">Seznam aut</a>
+    </div>
+</header>
+<main>
+    <img class="img-fluid" alt="Responsive image" src="../static/img/car.jpg">
+        <h1 class="centered pozadko">Vítej na stránkách o výrobě aut</h1>
+</main>
+<footer>
+    &copy; IT 2131 2024 Výroba aut
+</footer>
+</body>
+</html>

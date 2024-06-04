@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ auto.model }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="bg">
+<header>
+    <div class="topnav">
+        <a href="{% url 'auto_list' %}">Auta</a>
+        <a href="{% url 'vyrobce_list' %}">Seznam výrobců</a>
+        <a href="{% url 'zavod_list' %}">Seznam továren</a>
+        <a class="active" href="{% url 'auto_list' %}">Seznam aut</a>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <h1 class="centricek">{{ auto.model }}</h1>
+        <div class="card mb-4 bgs">
+            <div class="card-body bgs">
+                <h5 class="card-title">Detail auta</h5>
+                <p class="card-text"><strong>SPZ:</strong> {{ auto.spz }}</p>
+                <p class="card-text"><strong>Rok výroby:</strong> {{ auto.rok_vyroby }}</p>
+                <p class="card-text"><strong>Typ převodovky:</strong> {{ auto.prevodovka }}</p>
+                <p class="card-text"><strong>Typ paliva:</strong> {{ auto.palivo }}</p>
+                <p class="card-text"><strong>Výrobní závod:</strong> {{ auto.zavod.nazev }}</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'auto_list' %}" class="btn btn-primary" style="background-color: #333; border-color: #333;">
+                Zpět na seznam aut
+            </a>
+        </div>
+    </div>
+</main>
+<footer class="text-center">
+    &copy; IT 2131 2024 Car manufacturing
+</footer>
+<script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

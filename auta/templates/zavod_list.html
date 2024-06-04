@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seznam Továren Aut</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="bg">
+<header>
+    <div class="topnav">
+        <a href="{% url 'index' %}">Auta</a>
+        <a href="{% url 'vyrobce_list' %}">Seznam výrobců</a>
+        <a class="active" href="{% url 'zavod_list' %}">Seznam továren</a>
+        <a href="{% url 'auto_list' %}">Seznam aut</a>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <h1 class="centricek">Seznam Továren aut</h1>
+        <div class="row">
+            {% for zavod in zavody %}
+                <div class="col-md-4">
+                    <div class="card mb-4 bgs">
+                        <div class="card-body bgs">
+                            <h5 class="card-title kok">{{ zavod.nazev }}</h5>
+                            {% if zavod.vyrobce.logo %}
+                                <img src="{{ zavod.vyrobce.logo.url }}" class="card-img-top fotka"
+                                     alt="Logo {{ zavod.vyrobce.nazev }}">
+                            {% endif %}
+                            <p class="card-text"><strong>Adresa:</strong> {{ zavod.adresa }}</p>
+                            <p class="card-text"><strong>Výrobce:</strong> {{ zavod.vyrobce.nazev }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+<footer class="text-center">
+    &copy; IT 2131 2024 Car manufacturing
+</footer>
+<script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
